@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<!-- Datos del Cliente -->
+		<h2>Paso 1: Datos de Cliente</h2>
+		<div class="well form">
+			<p>
+				<input class="form-control" type="text" id="RazonSocial" placeholder="Razon Social">
+			</p>
+			<p>
+				<input class="form-control" type="text" id="Ruc" placeholder="Ruc">
+			</p>
+			<p>
+				<input class="form-control" type="text" id="Direccion" placeholder="RDireccion">
+			</p>
+			<p>
+				<button class="btn btn-primary" type="submit" onclick="addCliente()">Siguiente</button>
+			</p>
+		</div>
+
+		<hr><!-- Datos de Producto-->
+		<h2>Paso 2: Datos de Producto</h2>
+		<div class="well form">
+			<p>
+				<select class="form-control" type="text" id="Producto">
+				<option value="Manzanas">Manzana</option>
+				<option value="Platano">Platano</option>
+				<option value="Manzanas">Manzana</option>
+				<option value="Manzanas">Manzana</option>
+				<option value="Manzanas">Manzana</option>
+				</select>
+			</p>
+			<p>
+				<input class="form-control" type="number" id="Cantidad" placeholder="1">
+			</p>
+			<p>
+				<input class="form-control" type="text" id="Precio" placeholder="Precio">
+			</p>
+			<p>
+				<button class="btn btn-primary" type="submit" onclick="addProducto()">Agregar Producto</button>
+			</p>
+			<ul class="list-group-item">
+				<li class="list-group-item">No hay productos agregados</li>
+			</ul>
+			<p>
+				<button class="btn btn-primary" type="submit">Siguiente</button>
+			</p>
+		</div>
+		<hr><!-- Resumen -->
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+
+<!-- paso 1 ingresar cliente razon social direccion ruc btn siguiente -->
+<!-- paso 2 ingresar productos nombre cantidad precio btn agregar / productos agregados -->
+<!-- paso 2 ingresar productos nombre cantidad precio btn agregar /  lst productos agregados c/btn delete btn siguiente -->
+<!-- agregar importeTotak ak agregar producto-->
+<!-- paso 2 ingresar productos nombre cantidad precio btn agregar / productos agregados -->
+<!-- factura agregar cliente,empresa, regresar para modif cliente/producto-->
+

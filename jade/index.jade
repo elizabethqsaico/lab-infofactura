@@ -1,0 +1,108 @@
+html(lang="en")
+	head
+	title INFO - FACTURA
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible' content='IE=edge')
+	meta(name='viewport' content='width=device-width, initial-scale=1')
+	link(rel='stylesheet' href='../css/bootstrap.min.css')
+	link(rel='stylesheet' href='../css/main.css')
+	body
+		.container
+			.row.well
+				.col-md-2.text-center
+					span#logo.glyphicon.glyphicon-gift
+				.col-md-10
+					h2#empresaNombre
+					h5#empresaDireccion
+					h5#empresaTelefono
+					h5#empresaNumRuc
+			hr
+			.row
+				.col-md-6.form.container
+					.well
+						h4 PASO 1: Datos del Cliente
+						p
+							input#razonSocial.form-control(type='text' placeholder='Razón Social')
+						p
+							input#direccion.form-control(type='text' placeholder='Dirección')
+						p
+							input#numRuc.form-control(type='number'  placeholder='Número de Ruc')
+						p.text-right
+							button.btn.btn-primary(type='submit' onclick='addCliente()') Siguiente
+				.col-md-6.form
+					.form
+						.well
+							h4 PASO 2: Datos del Producto
+							p
+								select#listaProductos.form-control(onchange='updatePrecio(this.value)')
+							p
+								input#precio.form-control(placeholder='0.00' disabled)
+							p
+								input#cantidad.form-control(type='number' placeholder='1')
+							p.text-right
+								button.btn.btn-primary(type='submit' onclick='addProducto()') Agregar a Lista
+					.form
+						.well
+							h4 Productos Agregados
+							ul#productosAgregados.list-group
+								li.list-group-item
+									.row
+										.col-sm-3
+											p.bg-info Desc.
+										.col-sm-3
+											p.bg-info P. Unit.
+										.col-sm-3
+											p.bg-info Cant.
+										.col-sm-3
+											p.bg-info Total
+							hr
+							h4 Monto a pagar: 
+								span#precioTotal 0.00
+							p.text-right
+								button.btn.btn-primary(type='button' onclick='generarFactura()' data-toggle='modal' data-target='#myModal') Generar Factura
+								#myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
+									.modal-dialog(role='document')
+										.modal-content
+											.modal-header
+												h4#myModalLabel.modal-title Factura: 
+													span#numFactura 001
+											.modal-body
+												#empresa.row
+													.col-md-2.text-center
+														span#logo.glyphicon.glyphicon-gift
+													.col-md-10
+														h2#mEmpresaNombre
+														h5#mEmpresaDireccion
+														h5#mEmpresaTelefono
+														h5#mEmpresaNumRuc
+												hr
+												#cliente
+													h4#clienteNombre
+													h5#clienteDireccion
+													h5#clienteNumRuc
+												hr
+												#productos
+													ul#mProductosAgregados.list-group
+														li.list-group-item
+															.row
+																.col-sm-3
+																	p.bg-info Desc.
+																.col-sm-3
+																	p.bg-info P. Unit.
+																.col-sm-3
+																	p.bg-info Cant.
+																.col-sm-3
+																	p.bg-info Total
+												hr
+												#reporte
+													h4#reporteSubTotal Subtotal: 
+													h4#reporteIgv IGV: 
+													h4#reporteTotal Total: 
+											.modal-footer
+												button.btn.btn-primary(type='button' data-dismiss="modal") Ok
+			hr
+		script(src='http://code.jquery.com/jquery-1.11.2.min.js')
+		script(src='http://code.jquery.com/jquery-migrate-1.2.1.min.js')
+		script(type='text/javascript', src='../js/bootstrap.min.js')
+		script(type='text/javascript' src='../js/main.js')
+
